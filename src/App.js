@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "./components/styles/Global";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import Placeholder from "./components/Placeholder";
+import Notes from "./components/Notes";
+import { NoteContainer } from "./components/styles/Notes.styled";
+import { NoteContext } from "./NotesProvider";
+
+const theme = {};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { notes } = React.useContext(NoteContext);
+	const hasNotes = notes.length > 0;
+
+	return (
+		<ThemeProvider theme={theme}>
+			<>
+				<GlobalStyles />
+				<Header />
+				<Form />
+				{hasNotes ? (
+					<NoteContainer>
+						{notes.map((note) => (
+							<Notes key={note.id} note={note} />
+						))}
+					</NoteContainer>
+				) : (
+					<Placeholder />
+				)}
+			</>
+		</ThemeProvider>
+	);
 }
 
 export default App;
