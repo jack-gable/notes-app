@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/google-keep-clone/static/js/main.088de952.js",
+    "static/js/787.9243050f.chunk.js": "/google-keep-clone/static/js/787.9243050f.chunk.js",
+    "index.html": "/google-keep-clone/index.html",
+    "main.088de952.js.map": "/google-keep-clone/static/js/main.088de952.js.map",
+    "787.9243050f.chunk.js.map": "/google-keep-clone/static/js/787.9243050f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.088de952.js"
+  ]
+}
