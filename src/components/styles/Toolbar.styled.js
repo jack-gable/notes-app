@@ -16,6 +16,10 @@ export const StyledToolbar = styled.div`
 	&:hover {
 		opacity: 1;
 	}
+
+	@media (max-width: 35rem) {
+		opacity: 1;
+	}
 `;
 
 export const ToolbarColor = styled.svg`
